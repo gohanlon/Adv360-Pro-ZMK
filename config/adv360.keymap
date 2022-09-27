@@ -61,7 +61,7 @@
    &kp ESC      AS(A)     AS(S)     AS(D)      AS(F)     AS(G)              &none  &kp LCTRL   &kp LALT                         &kp LGUI  &kp RCTRL      &none     AS(H)   AS(J)      AS(K)    AS(L)  AS(SEMI)    AS(SQT)
  &kp LSHFT      AS(Z)     AS(X)     AS(C)      AS(V)     AS(B)              &none      &none   &kp HOME      &none      &none  &kp PG_UP      &none      &none     AS(N)   AS(M)  AS(COMMA)  AS(DOT)  AS(FSLH)  AS(RSHFT)
 // | fn    | ` | Caps | 􀁺 | 􀁼 || Bspc | Del | End | PgDn | Enter | Space || 􀁶 | 􀁸 | [ | ] fn |
-     &mo 2  AS(GRAVE)  &kp CAPS  &kp LEFT  &kp RIGHT  &kp SPACE            &kp BSPC    &kp END  &kp PG_DN  &kp DEL  &kp ENTER     &kp UP   &kp DOWN   AS(LBKT)  AS(RBKT)   &mo 2
+     &mo 2  AS(GRAVE)  &kp CAPS  &kp LEFT  &kp RIGHT  &hm LGUI SPACE            &kp BSPC    &kp END  &kp PG_DN  &kp DEL  &kp ENTER     &kp UP   &kp DOWN   AS(LBKT)  AS(RBKT)   &mo 2
             >;
         };
 
