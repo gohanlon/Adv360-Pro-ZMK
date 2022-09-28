@@ -57,12 +57,15 @@
 // | fn    | ` | Caps | 􀁺 | 􀁼 || Bspc | Del | End | PgDn | Enter | Space || 􀁶 | 􀁸 | [ | ] fn |
 
             bindings = <
- AS(EQUAL)     AS(N1)    AS(N2)    AS(N3)     AS(N4)    AS(N5)             &tog 1      &mo 3     AS(N6)     AS(N7)     AS(N8)     AS(N9)     AS(N0)  AS(MINUS)
-   &kp TAB      AS(Q)     AS(W)     AS(E)      AS(R)     AS(T)              &none      &none      AS(Y)      AS(U)      AS(I)      AS(O)      AS(P)   AS(BSLH)
-   &kp ESC      AS(A)     AS(S)     AS(D)      AS(F)     AS(G)              &none  &kp LCTRL   &kp LALT                         &kp LGUI  &kp RCTRL      &none     AS(H)   AS(J)      AS(K)    AS(L)  AS(SEMI)    AS(SQT)
-// | Shift | Z | X | C | V | B | 􀍼  || 􀍼 | Home | 􀍼 ||  || 􀍼 | PgUp | 􀍼 || 􀍼   | N | M | , | . | / | Shift |
- HYPER      AS(Z)     AS(X)     AS(C)      AS(V)     AS(B)              &none      &none   &kp HOME      &none      &none  &kp PG_UP      &none      &none     AS(N)   AS(M)  AS(COMMA)  AS(DOT)  AS(FSLH)  AS(RSHFT)
-// fn   | `        | Caps    | 􀁺       | 􀁼       || Bspc          | Del              | End    | PgDn     | Enter    | Space || 􀁶     | 􀁸       | [       | ]       | fn 
+/* =        | 1     | 2     | 3     | 4     | 5     | kp   || Mod  | 6     | 7     | 8     | 9     | 0     | - */
+   AS(EQUAL)  AS(N1)  AS(N2)  AS(N3)  AS(N4)  AS(N5)  &tog 1  &mo 3  AS(N6)  AS(N7)  AS(N8)  AS(N9)  AS(N0)  AS(MINUS)
+/* Tab    | Q    | W    | E    | R    | T    | 􀀺   || 􀀾    | Y    | U    | I    | O    | P    | \ */
+   &kp TAB  AS(Q)  AS(W)  AS(E)  AS(R)  AS(T)  &none  &none  AS(Y)  AS(U)  AS(I)  AS(O)  AS(P)  AS(BSLH)
+/* Esc          | A    | S    | D    | F    | G    | 􀀼   || LCtrl    | LAlt   || LGui    | RCtrl   || 􀁀    | H    | J    | K    | L    | ;       | ' */
+   &hm LCTRL ESC  AS(A)  AS(S)  AS(D)  AS(F)  AS(G)  &none  &kp LCTRL  &kp LALT  &kp LGUI  &kp RCTRL  &none  AS(H)  AS(J)  AS(K)  AS(L)  AS(SEMI)  AS(SQT)
+/* Shift | Z    | X    | C    | V    | B    | 􀍼   || 􀍼    | Home    | 􀍼   || 􀍼    | PgUp     | 􀍼   || 􀍼    | N    | M    | ,        | .      | /       | Shift */
+   HYPER   AS(Z)  AS(X)  AS(C)  AS(V)  AS(B)  &none  &none  &kp HOME  &none  &none  &kp PG_UP  &none  &none  AS(N)  AS(M)  AS(COMMA)  AS(DOT)  AS(FSLH)  AS(RSHFT)
+/* fn   | `        | Caps    | 􀁺       | 􀁼       || Bspc          | Del              | End    | PgDn     | Enter    | Space || 􀁶     | 􀁸       | [       | ]       | fn */
    &mo 2  AS(GRAVE)  &kp CAPS  &kp LEFT  &kp RIGHT  &hm LGUI SPACE  &hm LA(BSPC) BSPC  &kp END  &kp PG_DN  &kp DEL  &kp ENTER  &kp UP  &kp DOWN  AS(LBKT)  AS(RBKT)  &mo 2
             >;
         };
