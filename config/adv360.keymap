@@ -21,6 +21,12 @@
 #define AS(keycode) &as LS(keycode) keycode
 #define HYPER &mt LC(LS(LA(LGUI))) END
 
+#define DEFAULT  0
+#define KEYPAD   1
+#define FUNCTION 2
+#define MOD      3
+#define ARROWS   4
+
 / {
   behaviors {
     #include "macros.dtsi"
@@ -63,9 +69,9 @@
    &kp TAB  AS(Q)  AS(W)  AS(E)  AS(R)  AS(T)  &none  &none  AS(Y)  AS(U)  AS(I)  AS(O)  AS(P)  AS(BSLH)
 /* Esc          | A    | S    | D    | F    | G    | 􀀼   || LCtrl    | LAlt   || LGui    | RCtrl   || 􀁀    | H    | J    | K    | L    | ;       | ' */
    &hm LCTRL ESC  AS(A)  AS(S)  AS(D)  AS(F)  AS(G)  &none  &kp LCTRL  &kp LALT  &kp LGUI  &kp RCTRL  &none  AS(H)  AS(J)  AS(K)  AS(L)  AS(SEMI)  AS(SQT)
-/* Shift | Z    | X    | C    | V    | B    | 􀍼   || 􀍼    | Home    | 􀍼   || 􀍼    | PgUp     | 􀍼   || 􀍼    | N    | M    | ,        | .      | /       | Shift */
-   HYPER   AS(Z)  AS(X)  AS(C)  AS(V)  AS(B)  &none  &none  &kp HOME  &none  &none  &kp PG_UP  &none  &none  AS(N)  AS(M)  AS(COMMA)  AS(DOT)  AS(FSLH)  AS(RSHFT)
-/* fn   | `        | Caps    | 􀁺       | 􀁼       || Bspc          | Del              | End    | PgDn     | Enter    | Space || 􀁶     | 􀁸       | [       | ]       | fn */
+/* Shift | Z    | X    | C    | V    | B    | 􀍼   || 􀍼    | Home      | 􀍼   || 􀍼    | PgUp      | 􀍼   || 􀍼    | N    | M    | ,        | .      | /       | Shift */
+   HYPER   AS(Z)  AS(X)  AS(C)  AS(V)  AS(B)  &none  &none  &mo ARROWS  &none  &none  &mo ARROWS  &none  &none  AS(N)  AS(M)  AS(COMMA)  AS(DOT)  AS(FSLH)  AS(RSHFT)
+/* fn   | `        | Caps    | 􀁺       | 􀁼       || Bspc          | Del              | End    | PgDn     | Enter  | Space   || 􀁶     | 􀁸       | [       | ]       | fn */
    &mo 2  AS(GRAVE)  &kp CAPS  &kp LEFT  &kp RIGHT  &hm LGUI SPACE  &hm LA(BSPC) BSPC  &kp END  &kp PG_DN  &kp DEL  &kp ENTER  &kp UP  &kp DOWN  AS(LBKT)  AS(RBKT)  &mo 2
             >;
         };
@@ -97,6 +103,21 @@
   &none         &none         &none         &none         &none            &none            &rgb_ug RGB_MEFS_CMD 5   &bt BT_CLR         &none                                   &bt BT_CLR    &bt BT_CLR  &rgb_ug RGB_MEFS_CMD 5   &none   &none   &none   &none   &none   &none
   &none         &none         &none         &none         &none            &none                             &none        &none         &none         &none            &none         &none         &none                   &none   &none   &none   &none   &none   &none   &none
   &none         &none         &none    &bl BL_INC    &bl BL_DEC  &rgb_ug RGB_TOG                        &bl BL_TOG        &none         &none    &bl BL_TOG  &rgb_ug RGB_TOG    &bl BL_INC    &bl BL_DEC                   &none   &none   &none
+            >;
+        };
+
+        layer_arrows {
+            bindings = <
+/* =     | 1     | 2     | 3     | 4     | 5     | kp    || Mod  | 6     | 7     | 8     | 9     | 0     | - */
+   &trans  &trans  &trans  &trans  &trans  &trans  &tog 1   &mo 3  &trans  &trans  &trans  &trans  &trans  &trans
+/* Tab   | Q           | W           | E         | R            | T     | 􀀺   || 􀀾    | Y       | U        | I        | O      | P     | \ */
+   &trans  AS(LC(LEFT))  AS(LC(DOWN))  AS(LC(UP))  AS(LC(RIGHT))  &trans  &none  &none  AS(HOME)  AS(PG_UP)  AS(PG_DN)  AS(END)  &trans  &trans
+/* Esc   | A           | S           | D         | F            | G     | 􀀼   || LCtrl | LAlt || LGui  | RCtrl || 􀁀    | H       | J       | K     | L        | ;     | ' */
+   &trans  AS(LA(LEFT))  AS(LA(DOWN))  AS(LA(UP))  AS(LA(RIGHT))  &trans  &none  &trans  &trans  &trans  &trans   &none  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+/* Shift | Z           | X           | C         | V            | B     | 􀍼   || 􀍼    | Home  | 􀍼   || 􀍼    | PgUp  | 􀍼   || 􀍼    | N     | M     | ,      | .    | /     | Shift */
+   &trans  AS(LG(LEFT))  AS(LG(DOWN))  AS(LG(UP))  AS(LG(RIGHT))  &trans  &trans  &none  &none  &trans  &none  &none  &trans  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans
+/* fn    | `     | Caps  | 􀁺     | 􀁼    || Bspc  | Del   | End   | PgDn  | Enter | Space || 􀁶     | 􀁸     | [     | ]     | fn */
+   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans  &trans  &trans  &trans  &trans
             >;
         };
 
