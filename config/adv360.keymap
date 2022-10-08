@@ -66,7 +66,7 @@
 /* =        | 1     | 2     | 3     | 4     | 5     | kp   || Mod  | 6     | 7     | 8     | 9     | 0     | - */
    AS(EQUAL)  AS(N1)  AS(N2)  AS(N3)  AS(N4)  AS(N5)  &tog 1  &mo 3  AS(N6)  AS(N7)  AS(N8)  AS(N9)  AS(N0)  AS(MINUS)
 /* Tab    | Q    | W    | E    | R    | T    | 􀀺   || 􀀾    | Y    | U    | I    | O    | P    | \ */
-   &kp TAB  AS(Q)  AS(W)  AS(E)  AS(R)  AS(T)  &none  &none  AS(Y)  AS(U)  AS(I)  AS(O)  AS(P)  AS(BSLH)
+   AS(TAB)  AS(Q)  AS(W)  AS(E)  AS(R)  AS(T)  &none  &none  AS(Y)  AS(U)  AS(I)  AS(O)  AS(P)  AS(BSLH)
 /* Esc          | A    | S    | D    | F    | G    | 􀀼   || LCtrl    | LAlt   || LGui    | RCtrl   || 􀁀    | H    | J    | K    | L    | ;       | ' */
    &hm LCTRL ESC  AS(A)  AS(S)  AS(D)  AS(F)  AS(G)  &none  &kp LCTRL  &kp LALT  &kp LGUI  &kp RCTRL  &none  AS(H)  AS(J)  AS(K)  AS(L)  AS(SEMI)  AS(SQT)
 /* Shift | Z    | X    | C    | V    | B    | 􀍼   || 􀍼    | Home      | 􀍼   || 􀍼    | PgUp      | 􀍼   || 􀍼    | N    | M    | ,        | .      | /       | Shift */
