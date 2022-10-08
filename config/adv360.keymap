@@ -26,6 +26,7 @@
 #define FUNCTION 2
 #define MOD      3
 #define ARROWS   4
+#define GAME     5
 
 / {
   behaviors {
@@ -67,8 +68,8 @@
    AS(EQUAL)  AS(N1)  AS(N2)  AS(N3)  AS(N4)  AS(N5)  &tog 1  &mo 3  AS(N6)  AS(N7)  AS(N8)  AS(N9)  AS(N0)  AS(MINUS)
 /* Tab    | Q    | W    | E    | R    | T    | 􀀺   || 􀀾    | Y    | U    | I    | O    | P    | \ */
    AS(TAB)  AS(Q)  AS(W)  AS(E)  AS(R)  AS(T)  &none  &none  AS(Y)  AS(U)  AS(I)  AS(O)  AS(P)  AS(BSLH)
-/* Esc          | A    | S    | D    | F    | G    | 􀀼   || LCtrl    | LAlt   || LGui    | RCtrl   || 􀁀    | H    | J    | K    | L    | ;       | ' */
-   &hm LCTRL ESC  AS(A)  AS(S)  AS(D)  AS(F)  AS(G)  &none  &kp LCTRL  &kp LALT  &kp LGUI  &kp RCTRL  &none  AS(H)  AS(J)  AS(K)  AS(L)  AS(SEMI)  AS(SQT)
+/* Esc          | A    | S    | D    | F    | G    | 􀀼    || LCtrl    | LAlt   || LGui    | RCtrl   || 􀁀    | H    | J    | K    | L    | ;       | ' */
+   &hm LCTRL ESC  AS(A)  AS(S)  AS(D)  AS(F)  AS(G)  &tog 5  &kp LCTRL  &kp LALT  &kp LGUI  &kp RCTRL  &none  AS(H)  AS(J)  AS(K)  AS(L)  AS(SEMI)  AS(SQT)
 /* Shift | Z    | X    | C    | V    | B    | 􀍼   || 􀍼    | Home      | 􀍼   || 􀍼    | PgUp      | 􀍼   || 􀍼    | N    | M    | ,        | .      | /       | Shift */
    HYPER   AS(Z)  AS(X)  AS(C)  AS(V)  AS(B)  &none  &none  &mo ARROWS  &none  &none  &mo ARROWS  &none  &none  AS(N)  AS(M)  AS(COMMA)  AS(DOT)  AS(FSLH)  AS(RSHFT)
 /* fn   | `        | Caps    | 􀁺       | 􀁼       || Bspc          | Del              | End    | PgDn     | Enter  | Space   || 􀁶     | 􀁸       | [       | ]       | fn */
@@ -118,6 +119,21 @@
    &trans  AS(LG(LEFT))  AS(LG(DOWN))  AS(LG(UP))  AS(LG(RIGHT))  &trans  &trans  &none  &none  &trans  &none  &none  &trans  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans
 /* fn    | `     | Caps  | 􀁺     | 􀁼    || Bspc  | Del   | End   | PgDn  | Enter | Space || 􀁶     | 􀁸     | [     | ]     | fn */
    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_game {
+            bindings = <
+/* =        | 1     | 2     | 3     | 4     | 5     | kp   || Mod  | 6     | 7     | 8     | 9     | 0     | - */
+   &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &tog 1  &mo 3  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp MINUS
+/* Tab    | Q    | W    | E    | R    | T    | 􀀺   || 􀀾    | Y    | U    | I    | O    | P    | \ */
+   &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &none  &none  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSLH
+/* Esc          | A    | S    | D    | F    | G    | 􀀼    || LCtrl    | LAlt   || LGui    | RCtrl   || 􀁀    | H    | J    | K    | L    | ;       | ' */
+   &hm LCTRL ESC  &kp A  &kp S  &kp D  &kp F  &kp G  &tog 5  &kp LCTRL  &kp LALT  &kp LGUI  &kp RCTRL  &none  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT
+/* Shift | Z    | X    | C    | V    | B    | 􀍼   || 􀍼    | Home      | 􀍼   || 􀍼    | PgUp      | 􀍼   || 􀍼    | N    | M    | ,        | .      | /       | Shift */
+   HYPER   &kp Z  &kp X  &kp C  &kp V  &kp B  &none  &none  &mo ARROWS  &none  &none  &mo ARROWS  &none  &none  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+/* fn   | `        | Caps    | 􀁺       | 􀁼       || Bspc          | Del              | End    | PgDn     | Enter  | Space   || 􀁶     | 􀁸       | [       | ]       | fn */
+   &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT  &kp SPACE  &kp BSPC  &kp END  &kp PG_DN  &kp DEL  &kp ENTER  &kp UP  &kp DOWN  &kp LBKT  &kp RBKT  &mo 2
             >;
         };
 
