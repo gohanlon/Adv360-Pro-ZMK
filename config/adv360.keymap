@@ -20,6 +20,8 @@
 
 #define AS(keycode) &as LS(keycode) keycode
 #define HYPER &mt LC(LS(LA(LGUI))) END
+#define MEH LS(LC(LALT))
+#define CSHFT LS(LCTRL)
 
 #define DEFAULT  0
 #define KEYPAD   1
@@ -56,13 +58,13 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
 // | =     | 1 | 2 | 3 | 4 | 5 | kp ||                                  || Mod | 6 | 7 | 8 | 9 | 0 | -     |
 // | Tab   | Q | W | E | R | T | 􀀺  ||                                  || 􀀾   | Y | U | I | O | P | \     | 
 // | Esc   | A | S | D | F | G | 􀀼  || LCtrl | LAlt ||  || LGui | RCtrl || 􀁀   | H | J | K | L | ; | '     |
 // | Shift | Z | X | C | V | B | 􀍼  || 􀍼 | Home | 􀍼 ||  || 􀍼 | PgUp | 􀍼 || 􀍼   | N | M | , | . | / | Shift |
 // | fn    | ` | Caps | 􀁺 | 􀁼 || Bspc | Del | End | PgDn | Enter | Space || 􀁶 | 􀁸 | [ | ] fn |
 
+        default_layer {
             bindings = <
 /* =        | 1     | 2     | 3     | 4     | 5     | kp   || Mod  | 6     | 7     | 8     | 9     | 0     | - */
    AS(EQUAL)  AS(N1)  AS(N2)  AS(N3)  AS(N4)  AS(N5)  &tog 1  &mo 3  AS(N6)  AS(N7)  AS(N8)  AS(N9)  AS(N0)  AS(MINUS)
